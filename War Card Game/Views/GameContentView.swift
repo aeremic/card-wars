@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GameContentView: View {
+	@EnvironmentObject var router: Router
+	
 	@State var playerCard = "card7"
 	@State var cpuCard = "card13"
 	
@@ -78,5 +80,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+	GameContentView()
 }
