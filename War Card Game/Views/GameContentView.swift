@@ -10,11 +10,17 @@ import SwiftUI
 struct GameContentView: View {
 	@EnvironmentObject var router: Router
 	
+	var uuidAsString: String
+	
+	@State var showingPopup = false
+	
 	@State var playerCard = "card7"
 	@State var cpuCard = "card13"
 	
 	@State var playerScore: Int = 0
 	@State var cpuScore: Int = 0
+	
+	@State var playerResult: Int = 0
 	
 	func onDealClick () {
 		let playerCardRandomizedValue = Int.random(in: 2...14)
@@ -30,14 +36,24 @@ struct GameContentView: View {
 		}
 	}
 	
+	func onFinishClick () {
+		playerResult = playerScore - cpuScore
+		showingPopup = true
+	}
+	
+	func onSaveClick () {
+		
+	}
+	
     var body: some View {
 		ZStack {
 			Image("background-plain")
 				.resizable()
 				.ignoresSafeArea()
 			VStack {
+				// Text("\(uuidAsString)")
 				Image("logo")
-					.padding(.bottom, 40.0)
+					.padding(.bottom, 20.0)
 				HStack {
 					Spacer()
 					Image(self.playerCard)
@@ -73,12 +89,41 @@ struct GameContentView: View {
 					.foregroundColor(.white)
 					Spacer()
 				}
+				Spacer()
+				Button("Finish") {
+					self.onFinishClick()
+				}
+				.padding()
+				.background(.white, in: RoundedRectangle(cornerRadius: 20))
+				.foregroundColor(.green)
+				.font(.title)
+				.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 			}
 			.padding()
+		}
+		.popup(isPresented: self.$showingPopup) {
+			ZStack {
+				Color.white.frame(width: 350, height: 150)
+					.cornerRadius(10)
+					.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+				VStack {
+					Text("Achieved score: \(String(playerScore))")
+						.foregroundColor(.green)
+						.font(.title)
+					Button("Save") {
+						self.onSaveClick()
+					}
+					.padding()
+					.background(.green, in: RoundedRectangle(cornerRadius: 20))
+					.foregroundColor(.white)
+					.font(.body)
+					.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+				}
+			}
 		}
     }
 }
 
 #Preview {
-	GameContentView()
+	GameContentView(uuidAsString: "testpreview")
 }

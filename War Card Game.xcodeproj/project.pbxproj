@@ -16,6 +16,9 @@
 		B4E779592C6D478A001F8B90 /* GameContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E779582C6D478A001F8B90 /* GameContentView.swift */; };
 		B4E7795B2C6D478B001F8B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E7795A2C6D478B001F8B90 /* Assets.xcassets */; };
 		B4E7795E2C6D478B001F8B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E7795D2C6D478B001F8B90 /* Preview Assets.xcassets */; };
+		B4F233652C6FD67700DA7E3D /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F233642C6FD67700DA7E3D /* PopupModifier.swift */; };
+		B4F233672C6FD7E200DA7E3D /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F233662C6FD7E200DA7E3D /* Popup.swift */; };
+		B4F233692C6FDA3D00DA7E3D /* FrameGetterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F233682C6FDA3D00DA7E3D /* FrameGetterModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		B4E779582C6D478A001F8B90 /* GameContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentView.swift; sourceTree = "<group>"; };
 		B4E7795A2C6D478B001F8B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4E7795D2C6D478B001F8B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4F233642C6FD67700DA7E3D /* PopupModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
+		B4F233662C6FD7E200DA7E3D /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		B4F233682C6FDA3D00DA7E3D /* FrameGetterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameGetterModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A4D3E22C6E958E009998A1 /* BackButton.swift */,
+				B4F233662C6FD7E200DA7E3D /* Popup.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -64,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				B4A4D3E02C6E950B009998A1 /* BackButtonModifier.swift */,
+				B4F233642C6FD67700DA7E3D /* PopupModifier.swift */,
+				B4F233682C6FDA3D00DA7E3D /* FrameGetterModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -122,6 +131,8 @@
 			dependencies = (
 			);
 			name = "War Card Game";
+			packageProductDependencies = (
+			);
 			productName = "War Card Game";
 			productReference = B4E779532C6D478A001F8B90 /* War Card Game.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +161,8 @@
 				Base,
 			);
 			mainGroup = B4E7794A2C6D478A001F8B90;
+			packageReferences = (
+			);
 			productRefGroup = B4E779542C6D478A001F8B90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,8 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F233672C6FD7E200DA7E3D /* Popup.swift in Sources */,
 				B4E779592C6D478A001F8B90 /* GameContentView.swift in Sources */,
 				B4A4D3E12C6E950B009998A1 /* BackButtonModifier.swift in Sources */,
+				B4F233652C6FD67700DA7E3D /* PopupModifier.swift in Sources */,
+				B4F233692C6FDA3D00DA7E3D /* FrameGetterModifier.swift in Sources */,
 				B4A4D3DF2C6E8DC8009998A1 /* StatsView.swift in Sources */,
 				B4A4D3DD2C6E8BF9009998A1 /* HomeView.swift in Sources */,
 				B4A4D3DB2C6E8996009998A1 /* Router.swift in Sources */,

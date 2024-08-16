@@ -18,7 +18,7 @@ struct War_Card_GameApp: App {
 				.navigationDestination(for: Router.Destination.self) { dest in
 					switch dest {
 					case .game(let uuidAsString):
-						GameContentView()
+						GameContentView(uuidAsString: uuidAsString)
 							.withCustomBackButton()
 					case .stats:
 						StatsView()

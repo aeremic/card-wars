@@ -9,13 +9,19 @@ import SwiftUI
 
 struct StatsView: View {
 	@EnvironmentObject var router: Router
+	let listData = ["Points 13", "Points 14", "Points 15"]
+	
     var body: some View {
 		ZStack {
 			Image("background-plain")
 				.resizable()
 				.ignoresSafeArea()
 			VStack {
-				Text("Stats View")
+				List(listData, id: \.self) { item in
+					Text(item)
+				}
+				.scrollContentBackground(.hidden)
+				Spacer()
 			}
 		}
     }

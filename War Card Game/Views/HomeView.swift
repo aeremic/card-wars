@@ -12,7 +12,7 @@ struct HomeView: View {
 	@EnvironmentObject var router: Router
 	
 	func onPlayClick() {
-		router.navigate(to: .game(uuidAsString: "uuidTest"))
+		router.navigate(to: .game(uuidAsString: "uuidTesting"))
 	}
 	
 	func onGoToStatsClick() {
@@ -28,7 +28,6 @@ struct HomeView: View {
 				VStack {
 					Image("logo")
 						.padding(.bottom, 40.0)
-					
 					HStack {
 						Spacer()
 						Button("Play") {
