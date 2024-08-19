@@ -28,7 +28,7 @@ struct GameContentView: View {
 	
 	func onDealClick () {
 		let playerCardRandomizedValue = Int.random(in: 2...14)
-		let cpuCardRandomizedValue = Int.random(in: 5...14)
+		let cpuCardRandomizedValue = Int.random(in: 2...14)
 		
 		playerCard = "card" + String(playerCardRandomizedValue)
 		cpuCard = "card" + String(cpuCardRandomizedValue)
