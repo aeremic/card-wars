@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GameContentView: View {
 	@EnvironmentObject var router: Router
+	
+	@Environment(\.modelContext) var modelContext: ModelContext
+	@Query var scoreDataModel: [ScoreDataModel]
 	
 	var uuidAsString: String
 	
@@ -38,11 +42,19 @@ struct GameContentView: View {
 	
 	func onFinishClick () {
 		playerResult = playerScore - cpuScore
+		
+		let newDataToAdd = ScoreDataModel (
+			score: playerResult,
+			createdOn: nil
+		)
+		modelContext.insert(newDataToAdd)
+		
 		showingPopup = true
 	}
 	
-	func onSaveClick () {
-		
+	func onResetScores () {
+		playerScore = 0
+		cpuScore = 0
 	}
 	
     var body: some View {
@@ -101,23 +113,16 @@ struct GameContentView: View {
 			}
 			.padding()
 		}
-		.popup(isPresented: self.$showingPopup) {
+		.popup(isPresented: self.$showingPopup, onDismiss: self.onResetScores) {
 			ZStack {
 				Color.white.frame(width: 350, height: 150)
 					.cornerRadius(10)
 					.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 				VStack {
-					Text("Achieved score: \(String(playerScore))")
+					Text("Achieved score: \(String(playerResult))")
 						.foregroundColor(.green)
 						.font(.title)
-					Button("Save") {
-						self.onSaveClick()
-					}
 					.padding()
-					.background(.green, in: RoundedRectangle(cornerRadius: 20))
-					.foregroundColor(.white)
-					.font(.body)
-					.shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
 				}
 			}
 		}
@@ -126,4 +131,5 @@ struct GameContentView: View {
 
 #Preview {
 	GameContentView(uuidAsString: "testpreview")
+		.modelContainer(for: [ScoreDataModel.self], inMemory: true)
 }

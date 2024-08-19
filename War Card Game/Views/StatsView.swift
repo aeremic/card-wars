@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct StatsView: View {
 	@EnvironmentObject var router: Router
-	let listData = ["Points 13", "Points 14", "Points 15"]
 	
+	@Environment(\.modelContext) var modelContext: ModelContext
+	@Query(sort: \ScoreDataModel.score, order: .reverse) var scoreDataModel: [ScoreDataModel]
+		
     var body: some View {
 		ZStack {
 			Image("background-plain")
 				.resizable()
 				.ignoresSafeArea()
 			VStack {
-				List(listData, id: \.self) { item in
-					Text(item)
+				List(scoreDataModel) { item in
+					Text("Score \(String(item.score))")
 				}
 				.scrollContentBackground(.hidden)
 				Spacer()
@@ -29,4 +32,5 @@ struct StatsView: View {
 
 #Preview {
     StatsView()
+		.modelContainer(for: [ScoreDataModel.self], inMemory: true)
 }

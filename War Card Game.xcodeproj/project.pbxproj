@@ -12,6 +12,7 @@
 		B4A4D3DF2C6E8DC8009998A1 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4D3DE2C6E8DC8009998A1 /* StatsView.swift */; };
 		B4A4D3E12C6E950B009998A1 /* BackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4D3E02C6E950B009998A1 /* BackButtonModifier.swift */; };
 		B4A4D3E32C6E958E009998A1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4D3E22C6E958E009998A1 /* BackButton.swift */; };
+		B4D8C9D12C73BE74005A9B92 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8C9D02C73BE74005A9B92 /* Score.swift */; };
 		B4E779572C6D478A001F8B90 /* War_Card_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E779562C6D478A001F8B90 /* War_Card_GameApp.swift */; };
 		B4E779592C6D478A001F8B90 /* GameContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E779582C6D478A001F8B90 /* GameContentView.swift */; };
 		B4E7795B2C6D478B001F8B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E7795A2C6D478B001F8B90 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		B4A4D3DE2C6E8DC8009998A1 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		B4A4D3E02C6E950B009998A1 /* BackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonModifier.swift; sourceTree = "<group>"; };
 		B4A4D3E22C6E958E009998A1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		B4D8C9D02C73BE74005A9B92 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		B4E779532C6D478A001F8B90 /* War Card Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "War Card Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E779562C6D478A001F8B90 /* War_Card_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = War_Card_GameApp.swift; sourceTree = "<group>"; };
 		B4E779582C6D478A001F8B90 /* GameContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		B4D8C9CF2C73BE61005A9B92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4D8C9D02C73BE74005A9B92 /* Score.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B4E7794A2C6D478A001F8B90 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +106,7 @@
 		B4E779552C6D478A001F8B90 /* War Card Game */ = {
 			isa = PBXGroup;
 			children = (
+				B4D8C9CF2C73BE61005A9B92 /* Models */,
 				B4A4D3E62C6E965A009998A1 /* Modifiers */,
 				B4A4D3E52C6E9626009998A1 /* Components */,
 				B4A4D3E42C6E960E009998A1 /* Views */,
@@ -198,6 +209,7 @@
 				B4A4D3DD2C6E8BF9009998A1 /* HomeView.swift in Sources */,
 				B4A4D3DB2C6E8996009998A1 /* Router.swift in Sources */,
 				B4A4D3E32C6E958E009998A1 /* BackButton.swift in Sources */,
+				B4D8C9D12C73BE74005A9B92 /* Score.swift in Sources */,
 				B4E779572C6D478A001F8B90 /* War_Card_GameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

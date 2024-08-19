@@ -12,9 +12,11 @@ public struct Popup<PopupContent> : ViewModifier where PopupContent : View {
 	@Binding var isPresented: Bool
 	
 	var view: () -> PopupContent
+	var onDismiss: () -> Void
 	
-	init(isPresented: Binding<Bool>, view: @escaping () -> PopupContent) {
+	init(isPresented: Binding<Bool>, onDismiss: @escaping () -> Void, view: @escaping () -> PopupContent) {
 		self._isPresented = isPresented
+		self.onDismiss = onDismiss
 		self.view = view
 	}
 	
@@ -76,6 +78,7 @@ public struct Popup<PopupContent> : ViewModifier where PopupContent : View {
 	}
 	
 	private func dismiss() {
+		self.onDismiss()
 		isPresented = false
 	}
 }

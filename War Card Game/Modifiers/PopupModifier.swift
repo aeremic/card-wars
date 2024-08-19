@@ -11,10 +11,12 @@ import SwiftUI
 extension View {
 	public func popup<PopupContent: View> (
 		isPresented: Binding<Bool>,
+		onDismiss: @escaping () -> Void,
 		view: @escaping () -> PopupContent) -> some View {
 			self.modifier (
 				Popup (
 					isPresented: isPresented,
+					onDismiss: onDismiss,
 					view: view)
 			)
 	}

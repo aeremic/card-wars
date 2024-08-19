@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct War_Card_GameApp: App {
@@ -28,5 +29,6 @@ struct War_Card_GameApp: App {
 			}
 			.environmentObject(router)
         }
+		.modelContainer(for: [ScoreDataModel.self])
     }
 }
